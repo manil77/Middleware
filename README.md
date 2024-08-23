@@ -1,21 +1,21 @@
 Project Structure
-1. Core: Contains business logic and domain entities.
-  Purpose: Contains domain entities, value objects, and domain logic.
-  Dependencies: Should not depend on any other project.
-  Contents: Entities, domain services, interfaces.
-2. Application: Contains application logic, including interfaces and use cases.
-  Purpose: Contains application logic, use cases, DTOs, and interfaces.
-  Dependencies: Depends on Core. Interfaces defined here can be implemented in Infrastructure.
-  Contents: Use cases, application services, DTOs, interface definitions.
-3. Infrastructure: Contains implementation details, such as data access with Dapper.
-  Purpose: Handles data access, external service integrations, and other infrastructure concerns.
-  Dependencies: Depends on Core and Application. Implements the interfaces defined in Application.
-  Contents: Dapper repositories, external API clients, database migrations, configurations.
-4. Application (Web Project or MVC Project): 
-  Purpose: Handles the presentation layer for a web application, such as controllers, views, and static content.
-  Dependencies: Depends on Application and possibly Infrastructure for services and repositories.
-  Contents: MVC controllers, Razor views, static files (CSS, JavaScript).
-5.WebApi: The entry point for the application, such as a Web API project.
-  Purpose: Exposes the application’s functionality via a RESTful API.
-  Dependencies: Depends on Application and possibly Infrastructure.
-  Contents: API controllers, endpoints, Swagger configuration.
+1. Core
+Purpose: Encapsulates the business logic and domain entities.
+Contents: Domain entities, value objects, domain services, and interfaces.
+Dependencies: No dependencies on other projects.
+2. Application
+Purpose: Manages application logic, including use cases and interfaces.
+Contents: Use cases, application services, DTOs, and interface definitions.
+Dependencies: Depends on the Core project. Interfaces defined here may be implemented in Infrastructure.
+3. Infrastructure
+Purpose: Implements infrastructure concerns like data access and external service integrations.
+Contents: Dapper repositories, external API clients, database migrations, and configurations.
+Dependencies: Depends on Core and Application projects, implementing interfaces defined in Application.
+4. Application (Web Project or MVC Project)
+Purpose: Manages the presentation layer for a web application, including controllers, views, and static content.
+Contents: MVC controllers, Razor views, and static files (CSS, JavaScript).
+Dependencies: Depends on Application and potentially Infrastructure for services and repositories.
+5. WebApi
+Purpose: Serves as the entry point for the application, exposing its functionality via a RESTful API.
+Contents: API controllers, endpoints, and Swagger configuration.
+Dependencies: Depends on Application and potentially Infrastructure.
