@@ -1,7 +1,18 @@
+using Application.Interfaces.UnitOfWork;
+using Application.Services.UnitOfWork;
+using Infrastructure.Interfaces.UnitOfWork;
+using Infrastructure.Repository.UnitOfWork;
+using Infrastructure.SQLHelper;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IAppUnitOfWork, AppUnitOfWork>();
+builder.Services.AddScoped<IRepositoryUnitOfWork, RepositoryUnitOfWork>();
+builder.Services.AddScoped<ISQLHelper, SQLHelper>();
+
+
 
 var app = builder.Build();
 

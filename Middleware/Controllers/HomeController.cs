@@ -17,7 +17,6 @@ namespace Middleware.Controllers
 
         public IActionResult Index()
         {
-            _appUnitOfWork.ProductService.PostData("a", "a");
             return View();
         }
 

@@ -8,6 +8,6 @@ namespace Application.Interfaces.UnitOfWork
 {
     public interface IAppUnitOfWork
     {
-        IProductService ProductService { get; } 
+        IProductService Product { get; } 
     }
 }

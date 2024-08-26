@@ -1,7 +1,10 @@
-﻿namespace Infrastructure.Interfaces
+﻿using Core.Entities;
+
+namespace Infrastructure.Interfaces
 {
     public interface IProductRepo
     {
-        void PostInsert(string a, string b);
+        void PostData(string a, string b);
+        IEnumerable<Product> GetAllProducts();
     }
 }
