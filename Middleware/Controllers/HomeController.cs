@@ -1,3 +1,4 @@
+using Application.Interfaces.UnitOfWork;
 using Microsoft.AspNetCore.Mvc;
 using Middleware.Models;
 using System.Diagnostics;
@@ -7,6 +8,7 @@ namespace Middleware.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IAppUnitOfWork _appUnitOfWork;
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -15,6 +17,7 @@ namespace Middleware.Controllers
 
         public IActionResult Index()
         {
+            _appUnitOfWork.ProductService.PostData("a", "a");
             return View();
         }
 
